@@ -41,3 +41,37 @@ Para conseguir acompanhar o workshop será necessário ter no ambiente
   # como falta o mongodb e o redis, deve falhar por erro de conexão
   npm run start:dev
   ```
+
+
+
+## Sugestão
+Utilizar o jq para formatar o response JSON no curl.
+- [Site do projeto](https://stedolan.github.io/jq/)
+- [Instalação](https://github.com/stedolan/jq/wiki/Installation)
+
+## Utilização
+- Listar tweets
+```bash
+
+$ curl http://localhost:3000/api/tweets/ | jq
+
+```
+
+- Criando um tweet
+```bash
+
+$ curl -X POST \
+> -H 'Content-Type: application/json' \
+> http://localhost:3000/api/tweets \
+> -d '{ "text": "Workshop R$ 2020" }' | jq
+
+```
+
+- Like em um tweet determinado
+```bash
+
+$ curl -X PUT \
+>  -H 'Content-Type: application/json' \
+>  http://localhost:3000/api/tweets/3177dd9a-cbee-448e-9134-805635ae39c4/likes | jq
+
+```
