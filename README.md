@@ -67,7 +67,7 @@ $ curl -X POST \
 
 ```
 
-- Like em um tweet determinado
+- Like em um determinado tweet
 ```bash
 
 $ curl -X PUT \
